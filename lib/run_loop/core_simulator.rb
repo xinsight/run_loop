@@ -202,7 +202,7 @@ class RunLoop::CoreSimulator
     install
 
     args = ['simctl', 'launch', device.udid, app.bundle_identifier]
-    hash = xcrun.exec(args, log_cmd: true, timeout: 20)
+    hash = xcrun.exec(args, log_cmd: true)
 
     exit_status = hash[:exit_status]
 
@@ -266,7 +266,7 @@ class RunLoop::CoreSimulator
     launch_simulator
 
     args = ['simctl', 'uninstall', device.udid, app.bundle_identifier]
-    xcrun.exec(args, log_cmd: true, timeout: 20)
+    xcrun.exec(args, log_cmd: true)
 
     device.simulator_wait_for_stable_state
     true
@@ -358,7 +358,7 @@ class RunLoop::CoreSimulator
     launch_simulator
 
     args = ['simctl', 'install', device.udid, app.path]
-    xcrun.exec(args, log_cmd: true, timeout: 20)
+    xcrun.exec(args, log_cmd: true)
 
     device.simulator_wait_for_stable_state
     installed_app_bundle_dir

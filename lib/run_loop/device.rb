@@ -304,7 +304,7 @@ Please update your sources to pass an instance of RunLoop::Xcode))
       end
 
       now = Time.now
-      timeout = 30
+      timeout = 60
       poll_until = now + timeout
       quiet = now + quiet_time
 
