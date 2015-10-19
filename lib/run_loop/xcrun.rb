@@ -5,7 +5,7 @@ module RunLoop
 
     DEFAULT_OPTIONS =
           {
-                :timeout => 30,
+                :timeout => 60,
                 :log_cmd => false
           }
 
