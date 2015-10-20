@@ -315,7 +315,8 @@ Please update your sources to pass an instance of RunLoop::Xcode))
       sha_fn = lambda do |data_dir|
         begin
           # Typically, this returns in < 0.3 seconds.
-          Timeout.timeout(2, TimeoutError) do
+          # 20151020: increase to avoid "execution expired" error
+          Timeout.timeout(5, TimeoutError) do
             RunLoop::Directory.directory_digest(data_dir)
           end
         rescue => _
